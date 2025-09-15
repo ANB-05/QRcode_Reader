@@ -14,7 +14,7 @@ while(True):
         pts = box[0].astype(int)
         pt1 = (pts[0][0], pts[0][1])  
         pt2 = (pts[2][0], pts[2][1])  
-        cv.rectangle(frame, pt1, pt2, (255, 0, 255), 3)
+        cv.polylines(frame, [pts], isClosed=True, color=(255, 0, 255), thickness=3)
         cv.putText(frame, value, (10,50), cv.FONT_ITALIC, 1, (25,50,20), 2)
     except:
         print("Not identified")
